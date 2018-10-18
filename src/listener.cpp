@@ -35,7 +35,7 @@
 // %Tag(CALLBACK)%
 void chatterCallback(const std_msgs::String::ConstPtr& msg)
 {
-  ROS_INFO("listener got: [%s]", msg->data.c_str());
+  ROS_INFO("[Listener] I heard: [%s]\n", msg->data.c_str());
 }
 // %EndTag(CALLBACK)%
 
@@ -76,7 +76,7 @@ int main(int argc, char **argv)
    * away the oldest ones.
    */
 // %Tag(SUBSCRIBER)%
-  ros::Subscriber sub = n.subscribe("command", 1000, chatterCallback);
+  ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
 // %EndTag(SUBSCRIBER)%
 
   /**
